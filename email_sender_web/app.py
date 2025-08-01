@@ -1,0 +1,226 @@
+from flask import Flask, render_template, request, jsonify, flash, redirect, url_for
+import openpyxl
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import logging
+import os
+from werkzeug.utils import secure_filename
+from config import Config # Import the Config class
+
+# Configure logging
+logging.basicConfig(
+    filename="order_report.log",
+    level=logging.ERROR,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
+app = Flask(__name__)
+app.config.from_object(Config) # Load configuration from config.py
+
+# Ensure the upload folder exists
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
+def send_email(sender_email, sender_password, recipient_email, subject, body):
+    """Sends an email."""
+    try:
+        msg = MIMEMultipart()
+        msg["From"] = sender_email
+        msg["To"] = recipient_email
+        msg["Subject"] = subject
+
+        msg.attach(MIMEText(body, "plain"))
+
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+            server.login(sender_email, sender_password)
+            server.send_message(msg)
+        return {"success": True, "message": f"Email sent successfully to {recipient_email}."}
+
+    except smtplib.SMTPAuthenticationError:
+        logging.error("SMTP Authentication Error: Check your email and password.")
+        return {"success": False, "message": "SMTP Authentication Error: Check your email and password."}
+    except Exception as e:
+        logging.error(f"Error sending email to {recipient_email}: {e}")
+        return {"success": False, "message": f"Error sending email to {recipient_email}: {e}"}
+
+def generate_order_report(excel_file_path, sender_email, sender_password, company_email, start_row, end_row):
+    """Generates and sends order reports for each person in the specified range of rows."""
+    try:
+        workbook = openpyxl.load_workbook(excel_file_path)
+        sheet = workbook.active
+
+        # Dynamically detect headers
+        header_row = [cell.value.strip().lower() if cell.value else "" for cell in sheet[1]]
+
+        # Define required headers
+        required_headers = {
+            "first name": None,
+            "last name": None,
+            "email address": None,
+            "phone number": None,
+            "ref number": None,
+            "premises number": None,
+        }
+
+        # Map headers to their column indices
+        for idx, header in enumerate(header_row):
+            if header in required_headers:
+                required_headers[header] = idx
+
+        # Check for missing headers
+        if None in required_headers.values():
+            missing_headers = [key for key, value in required_headers.items() if value is None]
+            return {"success": False, "message": f"Error: Required header columns {missing_headers} not found."}
+
+        # Extract column indices
+        first_name_index = required_headers["first name"]
+        last_name_index = required_headers["last name"]
+        email_index = required_headers["email address"]
+        phone_index = required_headers["phone number"]
+        ref_number_index = required_headers["ref number"]
+        premises_number_index = required_headers["premises number"]
+
+        # Iterate through the specified range of rows and send emails
+        for row_idx in range(start_row, end_row + 1):
+            row_data = [cell.value for cell in sheet[row_idx]] # Get all cell values for the row
+
+            if not row_data or row_data[first_name_index] is None:
+                continue
+
+            first_name = row_data[first_name_index]
+            last_name = row_data[last_name_index]
+            email = row_data[email_index]
+            phone_number = row_data[phone_index]
+            ref_number = row_data[ref_number_index]
+            premises_number = row_data[premises_number_index]
+
+            subject = f"Resubmit Orders  {first_name} {last_name}"
+            body = (
+                f"Good day,\n\nI trust you are well.\n\n"
+                f"Please refer to the details below for the order that needs to be resubmitted as the payment link was expired. The following order was submitted through the Bot.. "
+                f"proof-of-address-required\n\n"
+                f"First Name: {first_name}\n"
+                f"Last Name: {last_name}\n"
+                f"Email Address: {email}\n"
+                f"Phone Number: {phone_number}\n"
+                f"Ref Number: {ref_number}\n"
+                f"Premises Number: {premises_number}\n\n"
+                f"Thank you.\n\nKind Regards,\n\nSophia Luis\nForgeX\n0676188449."
+            )
+
+            email_result = send_email(sender_email, sender_password, company_email, subject, body)
+            if not email_result["success"]:
+                return email_result # Return early if an email sending fails
+
+        return {"success": True, "message": "Order reports sent successfully!"}
+
+    except FileNotFoundError:
+        logging.error(f"Error: Excel file '{excel_file_path}' not found.")
+        return {"success": False, "message": f"Excel file not found after upload."}
+    except Exception as e:
+        logging.error(f"An unexpected error occurred during order report generation: {e}")
+        return {"success": False, "message": f"An unexpected error occurred: {e}"}
+
+def remind_individuals(excel_file_path, sender_email, sender_password, start_row, end_row):
+    """Sends reminder emails to each individual in the specified range of rows."""
+    try:
+        workbook = openpyxl.load_workbook(excel_file_path)
+        sheet = workbook.active
+
+        header_row = [cell.value.strip().lower() if cell.value else "" for cell in sheet[1]]
+
+        try:
+            name_index = header_row.index("full name")
+            email_index = header_row.index("email")
+        except ValueError:
+            logging.error("Error: Required header columns ('Full Name', 'Email') not found.")
+            return {"success": False, "message": "Required header columns ('Full Name', 'Email') not found."}
+
+        for row_idx in range(start_row, end_row + 1):
+            row_data = [cell.value for cell in sheet[row_idx]] # Get all cell values for the row
+
+            if not row_data or row_data[name_index] is None:
+                continue
+
+            fullname = row_data[name_index]
+            email = row_data[email_index]
+
+            subject = "2nd Line Creation/Order Placemen(Presises ID)"
+            body = f"Good day {fullname},\n\nThis is a reminder to please submit your order.\n\nThank you!"
+
+            email_result = send_email(sender_email, sender_password, email, subject, body)
+            if not email_result["success"]:
+                return email_result # Return early if an email sending fails
+
+        return {"success": True, "message": "Reminder emails sent successfully!"}
+
+    except FileNotFoundError:
+        logging.error(f"Error: Excel file '{excel_file_path}' not found.")
+        return {"success": False, "message": f"Excel file not found after upload."}
+    except Exception as e:
+        logging.error(f"An unexpected error occurred during reminder sending: {e}")
+        return {"success": False, "message": f"An unexpected error occurred: {e}"}
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/send_emails', methods=['POST'])
+def send_emails_web():
+    if 'excel_file' not in request.files:
+        flash('No file part')
+        return redirect(request.url)
+
+    excel_file = request.files['excel_file']
+    sender_email = request.form['sender_email']
+    sender_password = request.form['sender_password']
+    choice = request.form['choice']
+    company_email = request.form.get('company_email', '') # Use .get to handle optional field
+
+    try:
+        start_row = int(request.form['start_row'])
+        end_row = int(request.form['end_row'])
+    except ValueError:
+        flash("Please enter valid numbers for the start and end rows.")
+        return redirect(url_for('index'))
+
+    if start_row < 2 or end_row < start_row:
+        flash("Invalid row range. Ensure the start row is at least 2 and the end row is greater than or equal to the start row.")
+        return redirect(url_for('index'))
+
+    if excel_file.filename == '':
+        flash('No selected file')
+        return redirect(request.url)
+
+    if excel_file and excel_file.filename.endswith('.xlsx'):
+        filename = secure_filename(excel_file.filename)
+        excel_file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        excel_file.save(excel_file_path)
+
+        if choice == 'company':
+            if not company_email:
+                flash("Company Email is required for 'Send to Company' option.")
+                os.remove(excel_file_path) # Clean up uploaded file
+                return redirect(url_for('index'))
+            result = generate_order_report(excel_file_path, sender_email, sender_password, company_email, start_row, end_row)
+        elif choice == 'individual':
+            result = remind_individuals(excel_file_path, sender_email, sender_password, start_row, end_row)
+        else:
+            flash("Invalid choice. Please select 'company' or 'individual'.")
+            os.remove(excel_file_path) # Clean up uploaded file
+            return redirect(url_for('index'))
+
+        os.remove(excel_file_path) # Clean up the uploaded file after processing
+
+        if result["success"]:
+            flash(result["message"])
+            return redirect(url_for('index'))
+        else:
+            flash(f"Error: {result['message']}")
+            return redirect(url_for('index'))
+    else:
+        flash('Invalid file type. Please upload an .xlsx file.')
+        return redirect(url_for('index'))
+
+if __name__ == '__main__':
+    app.run(debug=True)

@@ -1,0 +1,111 @@
+2025-06-12 11:06:08,624 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-12 11:06:08,625 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-12 11:06:08,626 - INFO -  * Restarting with stat
+2025-06-12 11:06:09,225 - WARNING -  * Debugger is active!
+2025-06-12 11:06:09,227 - INFO -  * Debugger PIN: 114-762-876
+2025-06-12 11:06:42,893 - INFO - 127.0.0.1 - - [12/Jun/2025 11:06:42] "GET / HTTP/1.1" 200 -
+2025-06-12 11:06:42,930 - INFO - 127.0.0.1 - - [12/Jun/2025 11:06:42] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2025-06-12 11:06:42,948 - INFO - 127.0.0.1 - - [12/Jun/2025 11:06:42] "[33mGET /static/images/lock_open.png HTTP/1.1[0m" 404 -
+2025-06-12 11:06:42,948 - INFO - 127.0.0.1 - - [12/Jun/2025 11:06:42] "[33mGET /static/js/script.js HTTP/1.1[0m" 404 -
+2025-06-12 11:07:01,321 - INFO - 127.0.0.1 - - [12/Jun/2025 11:07:01] "GET / HTTP/1.1" 200 -
+2025-06-12 11:07:01,345 - INFO - 127.0.0.1 - - [12/Jun/2025 11:07:01] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2025-06-12 11:07:01,347 - INFO - 127.0.0.1 - - [12/Jun/2025 11:07:01] "[33mGET /static/images/lock_open.png HTTP/1.1[0m" 404 -
+2025-06-12 11:07:01,349 - INFO - 127.0.0.1 - - [12/Jun/2025 11:07:01] "[33mGET /static/js/script.js HTTP/1.1[0m" 404 -
+2025-06-17 09:24:22,720 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-17 09:24:22,721 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-17 09:24:22,723 - INFO -  * Restarting with stat
+2025-06-17 09:24:23,668 - WARNING -  * Debugger is active!
+2025-06-17 09:24:23,672 - INFO -  * Debugger PIN: 114-762-876
+2025-06-17 09:26:10,037 - INFO - 127.0.0.1 - - [17/Jun/2025 09:26:10] "GET / HTTP/1.1" 200 -
+2025-06-17 09:26:10,082 - INFO - 127.0.0.1 - - [17/Jun/2025 09:26:10] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2025-06-17 09:26:10,092 - INFO - 127.0.0.1 - - [17/Jun/2025 09:26:10] "[33mGET /static/images/lock_open.png HTTP/1.1[0m" 404 -
+2025-06-17 09:26:10,094 - INFO - 127.0.0.1 - - [17/Jun/2025 09:26:10] "[33mGET /static/js/script.js HTTP/1.1[0m" 404 -
+2025-06-17 09:26:10,167 - INFO - 127.0.0.1 - - [17/Jun/2025 09:26:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 19:39:24,459 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-22 19:39:24,459 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 19:39:38,644 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-22 19:39:38,645 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 19:39:38,647 - INFO -  * Restarting with stat
+2025-07-22 19:39:39,110 - WARNING -  * Debugger is active!
+2025-07-22 19:39:39,114 - INFO -  * Debugger PIN: 114-762-876
+2025-07-22 19:39:56,316 - INFO - 127.0.0.1 - - [22/Jul/2025 19:39:56] "GET / HTTP/1.1" 200 -
+2025-07-22 19:39:56,349 - INFO - 127.0.0.1 - - [22/Jul/2025 19:39:56] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-22 19:39:56,369 - INFO - 127.0.0.1 - - [22/Jul/2025 19:39:56] "[33mGET /static/Images/ForgeX.png HTTP/1.1[0m" 404 -
+2025-07-22 19:39:56,371 - INFO - 127.0.0.1 - - [22/Jul/2025 19:39:56] "GET /static/Images/ForgeX%20-%20Black%20-%20Transparent%20Background.jpg HTTP/1.1" 200 -
+2025-07-22 19:39:56,371 - INFO - 127.0.0.1 - - [22/Jul/2025 19:39:56] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-07-22 19:39:56,429 - INFO - 127.0.0.1 - - [22/Jul/2025 19:39:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 19:44:17,300 - INFO - 127.0.0.1 - - [22/Jul/2025 19:44:17] "GET / HTTP/1.1" 200 -
+2025-07-22 19:44:17,343 - INFO - 127.0.0.1 - - [22/Jul/2025 19:44:17] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-22 19:44:17,353 - INFO - 127.0.0.1 - - [22/Jul/2025 19:44:17] "[33mGET /static/Images/ForgeX.png HTTP/1.1[0m" 404 -
+2025-07-22 19:44:17,354 - INFO - 127.0.0.1 - - [22/Jul/2025 19:44:17] "[36mGET /static/Images/ForgeX%20-%20Black%20-%20Transparent%20Background.jpg HTTP/1.1[0m" 304 -
+2025-07-22 19:44:17,355 - INFO - 127.0.0.1 - - [22/Jul/2025 19:44:17] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-07-22 19:44:17,451 - INFO - 127.0.0.1 - - [22/Jul/2025 19:44:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 19:45:51,221 - INFO - 127.0.0.1 - - [22/Jul/2025 19:45:51] "GET / HTTP/1.1" 200 -
+2025-07-22 19:45:51,266 - INFO - 127.0.0.1 - - [22/Jul/2025 19:45:51] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-22 19:45:51,277 - INFO - 127.0.0.1 - - [22/Jul/2025 19:45:51] "[33mGET /static/Images/ForgeX.png HTTP/1.1[0m" 404 -
+2025-07-22 19:45:51,279 - INFO - 127.0.0.1 - - [22/Jul/2025 19:45:51] "[36mGET /static/Images/ForgeX%20-%20Black%20-%20Transparent%20Background.jpg HTTP/1.1[0m" 304 -
+2025-07-22 19:45:51,281 - INFO - 127.0.0.1 - - [22/Jul/2025 19:45:51] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-07-22 19:45:51,378 - INFO - 127.0.0.1 - - [22/Jul/2025 19:45:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 19:50:08,342 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:08] "GET / HTTP/1.1" 200 -
+2025-07-22 19:50:08,361 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-22 19:50:08,371 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:08] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-07-22 19:50:08,372 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:08] "[33mGET /static/Images/ForgeX.png HTTP/1.1[0m" 404 -
+2025-07-22 19:50:08,373 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:08] "[36mGET /static/Images/ForgeX%20-%20Black%20-%20Transparent%20Background.jpg HTTP/1.1[0m" 304 -
+2025-07-22 19:50:10,657 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:10] "GET / HTTP/1.1" 200 -
+2025-07-22 19:50:10,681 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-22 19:50:10,684 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:10] "[36mGET /static/Images/ForgeX%20-%20Black%20-%20Transparent%20Background.jpg HTTP/1.1[0m" 304 -
+2025-07-22 19:50:10,686 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:10] "[33mGET /static/Images/ForgeX.png HTTP/1.1[0m" 404 -
+2025-07-22 19:50:10,688 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:10] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-07-22 19:50:11,537 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:11] "GET / HTTP/1.1" 200 -
+2025-07-22 19:50:11,560 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-22 19:50:11,563 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:11] "[33mGET /static/Images/ForgeX.png HTTP/1.1[0m" 404 -
+2025-07-22 19:50:11,565 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:11] "[36mGET /static/Images/ForgeX%20-%20Black%20-%20Transparent%20Background.jpg HTTP/1.1[0m" 304 -
+2025-07-22 19:50:11,566 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:11] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-07-22 19:50:15,817 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:15] "GET / HTTP/1.1" 200 -
+2025-07-22 19:50:15,840 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-22 19:50:15,842 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:15] "[33mGET /static/Images/ForgeX.png HTTP/1.1[0m" 404 -
+2025-07-22 19:50:15,845 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:15] "[36mGET /static/Images/ForgeX%20-%20Black%20-%20Transparent%20Background.jpg HTTP/1.1[0m" 304 -
+2025-07-22 19:50:15,846 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:15] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-07-22 19:50:43,876 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:43] "GET / HTTP/1.1" 200 -
+2025-07-22 19:50:43,896 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-22 19:50:43,900 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:43] "[36mGET /static/Images/ForgeX%20-%20Black%20-%20Transparent%20Background.jpg HTTP/1.1[0m" 304 -
+2025-07-22 19:50:43,901 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:43] "[33mGET /static/Images/ForgeX.png HTTP/1.1[0m" 404 -
+2025-07-22 19:50:43,902 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:43] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-07-22 19:50:45,688 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:45] "GET / HTTP/1.1" 200 -
+2025-07-22 19:50:45,711 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-22 19:50:45,715 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:45] "[36mGET /static/Images/ForgeX%20-%20Black%20-%20Transparent%20Background.jpg HTTP/1.1[0m" 304 -
+2025-07-22 19:50:45,716 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:45] "[33mGET /static/Images/ForgeX.png HTTP/1.1[0m" 404 -
+2025-07-22 19:50:45,717 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:45] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-07-22 19:50:46,633 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:46] "GET / HTTP/1.1" 200 -
+2025-07-22 19:50:46,657 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-22 19:50:46,660 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:46] "[33mGET /static/Images/ForgeX.png HTTP/1.1[0m" 404 -
+2025-07-22 19:50:46,662 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:46] "[36mGET /static/Images/ForgeX%20-%20Black%20-%20Transparent%20Background.jpg HTTP/1.1[0m" 304 -
+2025-07-22 19:50:46,664 - INFO - 127.0.0.1 - - [22/Jul/2025 19:50:46] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-07-24 10:10:37,641 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-24 10:10:37,642 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-24 10:10:37,643 - INFO -  * Restarting with stat
+2025-07-24 10:10:38,181 - WARNING -  * Debugger is active!
+2025-07-24 10:10:38,184 - INFO -  * Debugger PIN: 114-762-876
+2025-07-24 10:10:44,804 - INFO - 127.0.0.1 - - [24/Jul/2025 10:10:44] "GET / HTTP/1.1" 200 -
+2025-07-24 10:10:44,845 - INFO - 127.0.0.1 - - [24/Jul/2025 10:10:44] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-24 10:10:44,854 - INFO - 127.0.0.1 - - [24/Jul/2025 10:10:44] "[33mGET /static/Images/ForgeX.png HTTP/1.1[0m" 404 -
+2025-07-24 10:10:44,858 - INFO - 127.0.0.1 - - [24/Jul/2025 10:10:44] "GET /static/Images/ForgeX%20-%20Black%20-%20Transparent%20Background.jpg HTTP/1.1" 200 -
+2025-07-24 10:10:44,859 - INFO - 127.0.0.1 - - [24/Jul/2025 10:10:44] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-07-24 10:10:44,957 - INFO - 127.0.0.1 - - [24/Jul/2025 10:10:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-26 14:19:16,642 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-26 14:19:16,642 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-26 14:19:16,645 - INFO -  * Restarting with stat
+2025-07-26 14:19:17,230 - WARNING -  * Debugger is active!
+2025-07-26 14:19:17,233 - INFO -  * Debugger PIN: 114-762-876
+2025-07-26 14:19:39,027 - INFO - 127.0.0.1 - - [26/Jul/2025 14:19:39] "GET / HTTP/1.1" 200 -
+2025-07-26 14:19:39,120 - INFO - 127.0.0.1 - - [26/Jul/2025 14:19:39] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-26 14:19:39,138 - INFO - 127.0.0.1 - - [26/Jul/2025 14:19:39] "[33mGET /static/Images/ForgeX.png HTTP/1.1[0m" 404 -
+2025-07-26 14:19:39,143 - INFO - 127.0.0.1 - - [26/Jul/2025 14:19:39] "GET /static/Images/ForgeX%20-%20Black%20-%20Transparent%20Background.jpg HTTP/1.1" 200 -
+2025-07-26 14:19:39,161 - INFO - 127.0.0.1 - - [26/Jul/2025 14:19:39] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-07-26 14:19:39,400 - INFO - 127.0.0.1 - - [26/Jul/2025 14:19:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

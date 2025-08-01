@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender - ForgeX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='Images/ForgeX - Black - Transparent Background.jpg') }}" alt="ForgeX Logo" class="logo-img" width="400" height="100" style="width:100px; height:100px;">
+        </div>
+        <div class="about">
+            <a href="#" class="about-link">About →</a>
+            <span class="user-icon">👤</span>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <span class="start-icon">👤</span>
+        <span>Start → Click → About</span>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <span class="locking-text">locking</span>
+            </div>
+            <div class="card-body">
+                <div class="start-working-section">
+                    <span class="start-working-text">Start Working</span>
+                </div>
+                <div class="unlock-section">
+                    <img src="{{ url_for('static', filename='Images/ForgeX.png') }}" alt="Unlock Icon" class="unlock-icon">
+                    <span class="opens-after-subscription">opens After Subscription</span>
+                </div>
+                <button class="button">Button</button>
+            </div>
+        </div>
+
+        <div class="main-form-section">
+            <h1>Email Sender</h1>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
+            <form action="{{ url_for('send_emails_web') }}" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="excel_file">Excel File:</label>
+                    <input type="file" id="excel_file" name="excel_file" accept=".xlsx" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sender_email">Sender Email:</label>
+                    <input type="email" id="sender_email" name="sender_email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sender_password">Sender Password:</label>
+                    <input type="password" id="sender_password" name="sender_password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company_email">Company Email (if applicable):</label>
+                    <input type="email" id="company_email" name="company_email">
+                </div>
+
+                <div class="form-group radio-group">
+                    <input type="radio" id="send_to_company" name="choice" value="company" checked>
+                    <label for="send_to_company">Send to Company</label>
+
+                    <input type="radio" id="send_to_individual" name="choice" value="individual">
+                    <label for="send_to_individual">Send to Individuals</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="start_row">Start Row:</label>
+                    <input type="number" id="start_row" name="start_row" value="2" min="2" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="end_row">End Row:</label>
+                    <input type="number" id="end_row" name="end_row" min="2" required>
+                </div>
+
+                <button type="submit">Send Emails</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
